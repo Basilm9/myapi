@@ -16,6 +16,7 @@ func main() {
 	mux.HandleFunc("/weather", handlerWeatherAPI)
 
 // wrap our mutiplexer in our cors middleare (middleware adds some piece of information to the request/response)
+// think of cors like a bouncer at a club it is the dicider on what request we want to let reach our server
 	corsMux := middlewareCors(mux)
 
 	srv := &http.Server{
@@ -32,7 +33,7 @@ func handlerReadiness(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlerWeatherAPI(w http.ResponseWriter, r *http.Request) {
-	apiKey := "61e8a860c037438e8fd194407241004" // Use your actual API key
+	apiKey := "61e8a860c037438e8fd19sdfjslsdf" // Use your actual API key
 	baseURL := "http://api.weatherapi.com/v1/current.json"
 	query := "London" // Example query, replace with your desired location
 
